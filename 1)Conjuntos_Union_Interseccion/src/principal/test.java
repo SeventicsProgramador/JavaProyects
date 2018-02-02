@@ -9,7 +9,8 @@ public class test {
         
       Scanner  sn= new Scanner(System.in);
      int n ;
-        do {
+     boolean salir = false ; 
+     while(!salir){
     System.out.println("MENU");
     System.out.println("Ingrese el numero de la operacion que desea realizar ");
     System.out.println("1 Crear los conjuntos y sus elementos ");
@@ -17,6 +18,7 @@ public class test {
     System.out.println("3 Realizar la interseccion de los conjuntos ");
     System.out.println("4 Realizar la diferencia de conjuntos ");
     System.out.println("5 Finalizar el programa");
+    try{
      n =  sn.nextInt(); 
        
    
@@ -53,13 +55,22 @@ public class test {
     if(n==4){
         Operaciones.diferencia();
     }
-    } 
-        while(5!=n);    
-   System.out.println("Gracias por usar nuestro Software tenga un buen dia ");
-        
+    if (n==5){
+        System.out.println("Gracias por usar nuestro Software tenga un buen dia ");
+        break;
+    }
+            
+   
+    } catch (Exception e) {
+                System.out.println("Debes insertar un número");
+                sn.next();
+            }
+   
+     }   
     
         
 }
     }
     
+
 
